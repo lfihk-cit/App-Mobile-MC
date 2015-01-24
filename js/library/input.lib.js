@@ -24,7 +24,7 @@ function InputToHtml(Type, Id, Value, Size, Info)
    {
       Tips=' title="'+Info+'" ';   //remove ' and "
    }
-   return '<input type="'+Type+'" id="'+Id+'" value="'+Value+'" size="'+Size+'" '+Tips+' />';
+   return '<input type="'+Type+'" id="'+Id+'" class="form-control" value="'+Value+'" size="'+Size+'" '+Tips+' />';
 }
 /*
   * return an html input
@@ -61,7 +61,7 @@ function ButtonNextStep(NextMode, Label)
 
 function ButtonToHtml(OnclickValue, Label)
 {
-   return '<button onclick="'+OnclickValue+'">'+Label+'</button>';
+   return '<button onclick="'+OnclickValue+'" class="btn btn-primary">'+Label+'</button>';
 }
 
 

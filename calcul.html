@@ -68,29 +68,40 @@
 	
 	</head>
 	<body>
-		<div class="main-box">
+
 			<div id="menu"></div>
-			<div class="content-box rounded">
-				<div style="width:100%; text-align:left; margin-bottom:25px;">
-					<div style="float:left;"><img src="http://www.fis.edu.hk/images/web2/logoflower.png" height="80px"></div>
-					<div style="float:left; font-size:12px; margin-top:25px; margin-left:80px;"><b>Calcul Mental</b> <small>version 2013/02/25</small><br><small>French International School Hong Kong</small></div>
-					<div style="float:right;"><img src="img/logo-aefe.jpg" width="90px"></div>
-
-					<div style="clear:both;"></div>
-				</div>
-				<div id="box-message" class="error"></div>  
-				<div id="header" class="title1"></div>
-				<div id="body"></div>
-				<div id="footer"></div> 
-			</div>
 			
-			<div style="display: none;" id="flag-langage">
-				<button onClick="LT_ChangeLangage('fr');" class="language-flag">
-					<img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg">
-				</button>
+			<div class="container">
+			
+
+					<div class="row">
+						<div class="col-md-4"><img src="http://www.fis.edu.hk/images/web2/logoflower.png" height="80px"></div>
+						<div class="col-md-4 text-center">
+							<br />
+							<img src="img/logo_mccmt.png">
+						</div>
+						<div class="col-md-4 text-right"><img src="img/logo-aefe.jpg" width="90px"></div>
+					</div>
+					<div id="box-message" class="error"></div>  
+					<div id="header" class="title1"></div>
+					
+					<div class="row">
+						<div id="body"></div>
+					</div>
+					
+					<div class="row">
+						<div id="footer"></div>
+					</div>
+				
+				<div style="display: none;" id="flag-langage">
+					<button onClick="LT_ChangeLangage('fr');" class="language-flag">
+						<img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg">
+					</button>
+				</div>
+			
 			</div>
 
-		</div>
+
 
 		<!-- Popup window for answering -->
 		<div id="box-popup"></div>

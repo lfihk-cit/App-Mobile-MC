@@ -35,10 +35,7 @@ margin-top:5px;
 font-weight:bold;
 }
 
-body {
-background-image:url('../img/blue-bg.jpg');
-background-repeat:repeat;
-}
+
 
 #footer {
 margin-top:25px;
@@ -227,15 +224,7 @@ height:25px;
 background:#FF0000;
 }
 
-button {
-color:#333333;
-font-weight:bold;
-font-style:italic;
-background:#EDEDED;
-border:solid 1px #000000;
-border-right:solid 1px #CCCCCC;
-border-top:solid 1px #CCCCCC;
-}
+
 
 #body ul {
 margin-left:20px;

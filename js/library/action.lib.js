@@ -217,9 +217,8 @@ function FooterMenu(Parameters)
          Buttons+='<div class="fleft">'+ButtonNextStep('step1', MessageDictionnary('Revenir'))+'</div>';
          if(Players.length>0)
          {
-            Buttons+='<div class="fright">'+ButtonNextStep('step3', MessageDictionnary('Continuer'))+'</div>';
+            Buttons+=ButtonNextStep('step3', MessageDictionnary('Continuer'));
          }
-         Buttons+='<div class="fclear"></div>';
          $('#footer').html(Buttons);
       break;
 
