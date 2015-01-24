@@ -1,112 +1,124 @@
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-  <title>Calcul Mental - French International School Hong Kong</title>
-  <script type="text/javascript" src="js/library/object.js"></script>
-  <script type="text/javascript" src="js/config/user-settings.js"></script>
-  <script type="text/javascript" src="js/config/system-settings.js"></script>
-  <script type="text/javascript" src="js/jquery/jquery-1.js"></script>
-  <script type="text/javascript" src="js/jquery/jquery.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/layout.css">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calcul Mental - French International School Hong Kong</title>
 
-  <script type="text/javascript">
+	<script type="text/javascript" src="js/library/object.js"></script>
+	<script type="text/javascript" src="js/config/user-settings.js"></script>
+	<script type="text/javascript" src="js/config/system-settings.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-1.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/layout.css">	
 
-    $(document).ready(function()
-    {
-        var IsLoadMaths; var IsLoadInput; var IsLoadLayout; var IsLoadTimer; var IsLoadDictionnary; var IsLoadAction;
-        IsLoadMaths = IsLoadInput = IsLoadLayout = IsLoadTimer =  IsLoadDictionnary = IsLoadAction = false;
+	<!-- Bootstrap -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        function StartGameOnceLoad()
-        {
-            if(IsLoadMaths && IsLoadInput && IsLoadLayout && IsLoadTimer &&  IsLoadDictionnary && IsLoadAction)
-            {
-                 Run({'mode':'step1'});
-            }else
-            {
-                $('#box-message').html('loading');
-            }
-        }
-        //loading library that are using jquery        	
-        $.getScript('js/library/maths.lib.js?' + new Date().getTime(), function() { IsLoadMaths=true; StartGameOnceLoad();  });
-        $.getScript('js/library/input.lib.js?' + new Date().getTime(), function() { IsLoadInput=true; StartGameOnceLoad();  });
-        $.getScript('js/library/layout.lib.js?' + new Date().getTime(), function() { IsLoadLayout=true; StartGameOnceLoad();  });
-        $.getScript('js/config/timer-settings.js?' + new Date().getTime(), function() { IsLoadTimer=true;StartGameOnceLoad();  });
-        $.getScript('js/translation/dictionnary.fr.js?' + new Date().getTime(), function() { IsLoadDictionnary=true; StartGameOnceLoad();  });
-        $.getScript('js/library/action.lib.js?' + new Date().getTime(), function() {IsLoadAction=true; StartGameOnceLoad();  });
-        
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
 
-    });
-/*
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+		var IsLoadMaths; var IsLoadInput; var IsLoadLayout; var IsLoadTimer; var IsLoadDictionnary; var IsLoadAction;
+		IsLoadMaths = IsLoadInput = IsLoadLayout = IsLoadTimer =  IsLoadDictionnary = IsLoadAction = false;
 
-@ todo   check french characteer    ok
-         add key                    ok
-         first letter capital       ok (done for name, to be done in step 2)
-         close answer window button ok
-         name player too long?      ok
-         check 2 player same name   ok
-         multiplayer: reset score after game?      yes  
-         improve design and + window answer
-         add comment to object lib and input lib
-         add button instead of drop down for level
-         success game               approx
-         option editer score pour mode multi partie
-         bouton nouvelle partie tout le temps
-         selection du joeur seul par defaut dans fenetre reponse  ok
-         reply for division worng
-         
-         
-*/
-        
-  
-   </script>
-</head>
-<body>
-<div class="main-box">
- <div id="menu"></div>
- <div class="content-box rounded">
-  <div style="width:100%; text-align:left; margin-bottom:25px;">
-   <div style="float:left;"><img src="http://www.fis.edu.hk/images/web2/logoflower.png" height="80px"></div>
-   <div style="float:left; font-size:12px; margin-top:25px; margin-left:80px;"><b>Calcul Mental</b> <small>version 2013/02/25</small><br><small>French International School Hong Kong</small></div>
-   <div style="float:right;"><img src="img/logo-aefe.jpg" width="90px"></div>
-   
-   <div style="clear:both;"></div>
-  </div>
-  <div id="box-message" class="error"></div>  
-  <div id="header" class="title1"></div>
-  <div id="body"></div>
-  <div id="footer"></div> 
- </div>
- <img src="img/shadow.png" width="780px">
- <div style="display: none;" id="flag-langage"><button onClick="LT_ChangeLangage('fr');" class="language-flag"><img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg"></button></div>
- 
-</div>
+		function StartGameOnceLoad()
+		{
+			if(IsLoadMaths && IsLoadInput && IsLoadLayout && IsLoadTimer &&  IsLoadDictionnary && IsLoadAction)
+		{
+			Run({'mode':'step1'});
+		}else
+		{
+			$('#box-message').html('loading');
+		}
+		}
+		//loading library that are using jquery        	
+		$.getScript('js/library/maths.lib.js?' + new Date().getTime(), function() { IsLoadMaths=true; StartGameOnceLoad();  });
+		$.getScript('js/library/input.lib.js?' + new Date().getTime(), function() { IsLoadInput=true; StartGameOnceLoad();  });
+		$.getScript('js/library/layout.lib.js?' + new Date().getTime(), function() { IsLoadLayout=true; StartGameOnceLoad();  });
+		$.getScript('js/config/timer-settings.js?' + new Date().getTime(), function() { IsLoadTimer=true;StartGameOnceLoad();  });
+		$.getScript('js/translation/dictionnary.fr.js?' + new Date().getTime(), function() { IsLoadDictionnary=true; StartGameOnceLoad();  });
+		$.getScript('js/library/action.lib.js?' + new Date().getTime(), function() {IsLoadAction=true; StartGameOnceLoad();  });
+	});
+	/*
+	@ todo   check french characteer    ok
+	add key                    ok
+	first letter capital       ok (done for name, to be done in step 2)
+	close answer window button ok
+	name player too long?      ok
+	check 2 player same name   ok
+	multiplayer: reset score after game?      yes  
+	improve design and + window answer
+	add comment to object lib and input lib
+	add button instead of drop down for level
+	success game               approx
+	option editer score pour mode multi partie
+	bouton nouvelle partie tout le temps
+	selection du joeur seul par defaut dans fenetre reponse  ok
+	reply for division worng
+	*/
+	</script>
+	
+	</head>
+	<body>
+		<div class="main-box">
+			<div id="menu"></div>
+			<div class="content-box rounded">
+				<div style="width:100%; text-align:left; margin-bottom:25px;">
+					<div style="float:left;"><img src="http://www.fis.edu.hk/images/web2/logoflower.png" height="80px"></div>
+					<div style="float:left; font-size:12px; margin-top:25px; margin-left:80px;"><b>Calcul Mental</b> <small>version 2013/02/25</small><br><small>French International School Hong Kong</small></div>
+					<div style="float:right;"><img src="img/logo-aefe.jpg" width="90px"></div>
 
+					<div style="clear:both;"></div>
+				</div>
+				<div id="box-message" class="error"></div>  
+				<div id="header" class="title1"></div>
+				<div id="body"></div>
+				<div id="footer"></div> 
+			</div>
+			
+			<div style="display: none;" id="flag-langage">
+				<button onClick="LT_ChangeLangage('fr');" class="language-flag">
+					<img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg">
+				</button>
+			</div>
 
-<!-- Popup window for answering -->
-<div id="box-popup">
-</div>
+		</div>
 
-<!-- System data - these inputs are not used anymore, changed to variable -->
-<div id="div-system">
+		<!-- Popup window for answering -->
+		<div id="box-popup"></div>
 
-   <!-- current level played -->
-  <input id="system_level" type="hidden">
-   <!-- number of player of current game -->
-  <input id="system_number_player" type="hidden">
-   <!-- current question index in level question array -->
-  <input id="system_round" type="hidden">
-   <!-- current question answer -->
-  <input id="system_result" type="hidden">
-   <!-- flag telling if a question is currently active and open for answer --> 
-  <input id="system_active_question" value="1" type="hidden">
-   <!-- flag telling if game is win --> 
-  <input id="system_game_win" type="hidden">
+		<!-- System data - these inputs are not used anymore, changed to variable -->
+		<div id="div-system">
+			<!-- current level played -->
+			<input id="system_level" type="hidden">
+			<!-- number of player of current game -->
+			<input id="system_number_player" type="hidden">
+			<!-- current question index in level question array -->
+			<input id="system_round" type="hidden">
+			<!-- current question answer -->
+			<input id="system_result" type="hidden">
+			<!-- flag telling if a question is currently active and open for answer --> 
+			<input id="system_active_question" value="1" type="hidden">
+			<!-- flag telling if game is win --> 
+			<input id="system_game_win" type="hidden">
 
-  <input id="system_game_mode" type="hidden">
-</div>
+			<input id="system_game_mode" type="hidden">
+		</div>
 
-<div style="display: none;" id="box-win"></div>
-<div id="log">
-</div>
+		<div style="display: none;" id="box-win"></div>
+		<div id="log"></div>
 
-</body></html>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>
