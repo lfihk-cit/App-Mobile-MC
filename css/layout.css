@@ -23,8 +23,7 @@ color:#FF0000;
 color:#0099FF;
 font-size:15pt;
 font-weight:bold;
-margin-bottom:20px;
-margin-top:10px;
+margin:0px 0px 0px 0px;
 }
 
 .title2 {
@@ -96,43 +95,36 @@ margin-left:200px;
 
 
 .box-player {
-width:100%;
-height:60px;
-border:solid 1px #DDDDDD;
-font-size:35pt;
-color:#9999999;
+width:80%;
+font-size:24px;
 }
 
-.box-player-name
-{
-width:706px;
-float:left;
-text-transform: capitalize;
-
+.box-player-name {
+text-align:right;
 }
 
 .box-player-score {
-width:70px;
-height:60px;
-float:right; 
-border-left:solid 1px #DDDDDD; 
-text-align:right;
-
+float:left; 
+text-align:center;
+color:white;
+background-color:#D14D34;
+font-weight:bold;
+padding:5px 10px 5px 10px;
+-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;
 }
 
-.box-player a
-{
-
-height:60px;
-text-decoration:none;
-color:#999999;
+.box-player a {
 display:block;
 float:left;
+padding:5px 10px 5px 10px;
+text-decoration:none;
+color:black;
 }
 .box-player a:hover
 {
 color:#FFFFFF;
 background:#DDDDDD;
+text-decoration:none;
 }
 
 .player {
@@ -208,20 +200,21 @@ padding-top:20px;
 }
 
 #box-timer {
-position:relative;
+/*position:relative;*/
 left:100px;    /* rewritten in js */
 width:300px;   /* rewritten in js */
-height:25px;
-background:#FFFFFF;
-border:solid 1px #CCCCCC;
-margin-top:10px;
-margin-bottom:10px;
+margin:10px auto 10px auto;
+height:20px;
+background:#ECF0F1;
+border:solid 0px silver;
+-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;
 } 
 
 #bar-timer {
 width:0px;
-height:25px;
-background:#FF0000;
+height:20px;
+background:#D14D34;
+-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;
 }
 
 
@@ -235,16 +228,17 @@ list-style-type: none;
 position:absolute;
 top:0;
 left:50%;
-margin-left:-250px;
-margin-top:25px;
-padding-top:25px;
-color:#FF0000;
-font-size:30pt;
+margin:25px 0px 25px 0px;
+padding:20px;
+color:white;
+font-size:32px;
 text-align:center;
 width:500px;
 height:200px;
-border:solid 5px #FF0000;
-background:#FFFFFF;
+background-color:#D14D34;
+font-weight:bold;
+padding:5px 10px 5px 10px;
+-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
 display:none;
 }
 

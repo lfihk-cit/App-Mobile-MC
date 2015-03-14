@@ -418,6 +418,23 @@ function AllPlayerFormToHtml()
    {
       Html+=Players[a].ToHtml();  
     }
+   
+   Html += '<br /><div class="col-md-4 col-md-offset-4" style="clear:both">';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'7\')">7</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'8\')">8</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'9\')">9</a><br />';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'4\')">4</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'5\')">5</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'6\')">6</a><br />';   
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'1\')">1</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'2\')">2</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'3\')">3</a><br />';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'0\')">0</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'.\')">,</a><br />';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="reset()">C</a>';
+   Html += '<a class="btn btn-default" href="#" role="button" onclick="back()"><</a>';
+   Html += '</div>';   
+   
    Html+='<div class="fclear"></div>';
    return Html;
 }
@@ -460,7 +477,13 @@ function Step3()
    //$('#system_game_win').attr('value',0); //to replace by call to var directly?
 
    //insert boxes for operation string and timer to header
-   $('#header').html('<div id="box-string-operation">&nbsp;</div><div id="box-timer"><div id="bar-timer"></div></div>');
+
+   AnswerBox = '<div id="box-string-operation">&nbsp;</div><div id="box-timer"><div id="bar-timer"></div></div>';
+   AnswerBox += '<br style="clear:both;">';   
+   
+   
+   
+   $('#header').html(AnswerBox);
    Run({'mode':'configure_step3'});//resize the timer after it is shown  
    //insert player boxes   
    $('#body').html(AllPlayerFormToHtml());

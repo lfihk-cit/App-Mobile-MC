@@ -116,17 +116,17 @@ function MultiPlayerShowOperation(StringOperation)
    $("#box-string-operation").html(StringOperation);  
 } 
 
+
+
 function SinglePlayerShowOperation(StringOperation)
 {
     //set string of operation and show it
-   AnswerInput = '<input type="text" size="3" id="inline_input_player_answer" />';
    
+   AnswerInput = '<form name="virtual" style="display:inline"><input type="text" size="3" id="inline_input_player_answer" class="form-control" name="text" style="width:100px;display:inline;"autofocus /></form>';
+  
    StringOperation=StringOperation.replace("?",AnswerInput.toString());
    $("#box-string-operation").html(StringOperation);
    $("#inline_input_player_answer").focus();
-
-   
-
    
 }
 
@@ -246,8 +246,9 @@ function AddHtmlToPopupBox(Type)
    $('#box-popup').empty();//empty box
    if(Type=='answer')
    {
-     $('#box-popup').html('<div style="float:right; margin-right:20px;"><a style="color:#FFFFFF; text-decoration:none;" href="javascript:ClosePopupAnswerForm();">X</a></div> <div id="box-player-name"></div> <div id="box-form"><br/><input type="text" id="popup_input_player_answer" size="3" /><button onclick="javascript:Run({\'mode\':\'answer\'});"><b>?</b></button></div>');
-      $('#box-popup').show();
+
+    $('#box-popup').html('<div style="float:right; margin-right:20px;"><a style="color:#FFFFFF; text-decoration:none;" href="javascript:ClosePopupAnswerForm();">X</a></div> <div id="box-player-name"></div> <div id="box-form"><br/><input type="text" id="popup_input_player_answer" size="3" /><button onclick="javascript:Run({\'mode\':\'answer\'});"><b>?</b></button></div>');
+    $('#box-popup').show();
       
    }else if(Type=='player_data')
    {
