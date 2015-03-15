@@ -1,0 +1,292 @@
+
+* {
+margin:0;
+padding:0;
+border:0;
+border-spacing:0;
+font-family: Verdana, sans;
+
+}
+
+
+a.help {
+color:#333333;
+text-decoration:none;
+font-size:10pt;
+}
+
+a.help:hover {
+color:#FF0000;
+}
+
+.title1 {
+color:#337AB7;
+font-size:15pt;
+font-weight:bold;
+margin:0px 0px 0px 0px;
+}
+
+.title2 {
+color:#999999;
+font-size:13pt;
+margin-bottom:10px;
+margin-top:5px;
+font-weight:bold;
+}
+
+
+
+#footer {
+margin-top:25px;
+}
+
+.tab {
+background:#FFFFFF; 
+width:120px;
+border:solid 1px #000000;
+border-bottom:0;
+}
+
+div.main-box {
+position:absolute;
+width:800px;
+height:500px;
+left:50%;
+margin-left:-400px;
+top:25px;
+}
+
+div.content-box {
+background:#FFFFFF;
+padding:10px; 
+border-bottom:solid 1px #000000;
+border-right:solid 1px #000000;
+border-left:solid 1px #999999;
+border-top:solid 1px #999999;
+
+
+}
+
+#box-string-operation {
+font-weigth:bold;
+font-size:22pt;
+text-align:center;
+width:100%;
+}
+
+input, select {
+border: solid 1px #CCCCCC;
+border-top: solid 1px #000000;
+color:#000000;
+}
+
+.error {
+color:#FF0000;
+font-size:10pt;
+}
+
+/*
+#display-result {
+width:100px;
+height:100px;
+margin-left:200px;
+}
+*/
+
+
+.box-player {
+width:80%;
+font-size:24px;
+}
+
+.box-player-name {
+text-align:right;
+}
+
+.box-player-score {
+float:left; 
+text-align:center;
+color:white;
+background-color:#D14D34;
+font-weight:bold;
+padding:5px 10px 5px 10px;
+-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;
+}
+
+.box-player a {
+display:block;
+float:left;
+padding:5px 10px 5px 10px;
+text-decoration:none;
+color:black;
+}
+.box-player a:hover
+{
+color:#FFFFFF;
+background:#DDDDDD;
+text-decoration:none;
+}
+
+.player {
+/*width:220px;
+height:50px;
+display:block;
+background:#FFFFFF;
+text-align:center;
+text-decoration:none;
+padding-top:25px;
+float:left;
+border:solid 1px #DDDDDD;
+margin-right:5px;
+margin-left:5px;
+margin-bottom:10px;
+*/
+
+}
+
+.player:hover{
+background:#EEEEEE;
+}
+
+
+.player:hover .player-name {
+background:#EEEEEE;
+color:#FF0000;
+}
+
+
+
+#box-popup {
+display:none;
+width:350px;
+height:170px;
+position:absolute;
+left:50%;
+top:0;
+margin-left:-225px;
+/*border:solid 1px #000000;
+background:#EEEEEE;*/
+background-image:url('../img/box-answer.png');
+text-align:center;
+}
+
+#box-form input, #player_id, #box-form button {
+font-weight:bold;
+font-size:24pt;
+}
+/*
+#box-visual-answer {
+margin-top:20px;
+width:200px;
+height:20px;
+}
+*/
+
+/*#box-player-name {
+margin-bottom:10px;
+border:solid 1px #CCCCCC;
+background:#EDEDED;
+}*/
+
+
+
+#-string-operation {
+width:100%;
+text-align:center;
+color:#000000;
+font-weight:bold;
+font-size:22pt;
+padding-top:20px;
+}
+
+#box-timer {
+/*position:relative;*/
+left:100px;    /* rewritten in js */
+width:300px;   /* rewritten in js */
+margin:10px auto 10px auto;
+height:20px;
+background:#ECF0F1;
+border:solid 0px silver;
+-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;
+} 
+
+#bar-timer {
+width:0px;
+height:20px;
+background:#D14D34;
+-moz-border-radius:2px;-khtml-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;
+}
+
+
+
+#body ul {
+margin-left:20px;
+list-style-type: none;
+}
+
+#box-win {
+position:absolute;
+top:0;
+left:50%;
+margin:25px 0px 25px 0px;
+padding:20px;
+color:white;
+font-size:32px;
+text-align:center;
+width:500px;
+height:200px;
+background-color:#D14D34;
+font-weight:bold;
+padding:5px 10px 5px 10px;
+-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+display:none;
+}
+
+.language-flag {
+border:#000000 solid 1px;
+margin-right:5px;
+height:18px;
+width:25px;
+text-align:center;
+}
+
+
+.fright {
+float:right;
+}
+
+.fleft {
+float:left;
+}
+
+.fclear {
+clear:both;
+}
+
+.label-field {
+width:200px;
+float:left;
+
+}
+
+.input-field {
+
+float:left;
+}
+
+#inline_input_player_answer
+{
+border:0;
+color:#000000;
+font-weight:bold;
+font-size:22pt;
+}
+
+.rounded {
+  border-radius:3ex 0;
+  moz-border-radius:3ex 0;
+  webkit-border-top-left-radius:3ex;
+  webkit-border-bottom-right-radius:3ex;
+} 
+
+
