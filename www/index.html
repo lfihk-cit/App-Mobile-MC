@@ -82,60 +82,111 @@
 
     <body>		
 
-		<div id="menu"></div>
+	
+		<!-- Fixed navbar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+				  </ul>
+				</li>
+			  </ul>
+			</div><!--/.nav-collapse -->
+		  </div>
+		</nav>	
+		
+		
+		
 		
 		<div class="container">
+		
+		
+			<div id="menu"></div>
+			
 
-				<div class="row">
-					<div class="col-md-4"><img src="http://www.fis.edu.hk/images/web2/logoflower.png" height="80px"></div>
-					<div class="col-md-4 text-center">
-						<br />
-						<img src="img/logo_mccmt.png">
+
+					<div class="row">
+						<div class="col-md-4"><img src="http://www.fis.edu.hk/images/web2/logoflower.png" height="80px"></div>
+						<div class="col-md-4 text-center">
+							<br />
+							<img src="img/logo_mccmt.png">
+						</div>
+						<div class="col-md-4 text-right"><img src="img/logo-aefe.jpg" width="90px"></div>
+					</div> 
+					<div id="box-message" class="error"></div>  
+					<div id="header" class="title1"></div>
+					
+					<div class="row">
+						<div id="body"></div>
 					</div>
-					<div class="col-md-4 text-right"><img src="img/logo-aefe.jpg" width="90px"></div>
-				</div> 
-				<div id="box-message" class="error"></div>  
-				<div id="header" class="title1"></div>
+					
+					<div class="row">
+						<div id="footer"></div>
+					</div>
 				
-				<div class="row">
-					<div id="body"></div>
-				</div>
-				
-				<div class="row">
-					<div id="footer"></div>
+				<div style="display: none;" id="flag-langage">
+					<button onClick="LT_ChangeLangage('fr');" class="language-flag">
+						<img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg">
+					</button>
 				</div>
 			
-			<div style="display: none;" id="flag-langage">
-				<button onClick="LT_ChangeLangage('fr');" class="language-flag">
-					<img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg">
-				</button>
+
+
+			<!-- Popup window for answering -->
+			<div id="box-popup"></div>
+
+			<!-- System data - these inputs are not used anymore, changed to variable -->
+			<div id="div-system">
+				<!-- current level played -->
+				<input id="system_level" type="hidden">
+				<!-- number of player of current game -->
+				<input id="system_number_player" type="hidden">
+				<!-- current question index in level question array -->
+				<input id="system_round" type="hidden">
+				<!-- current question answer -->
+				<input id="system_result" type="hidden">
+				<!-- flag telling if a question is currently active and open for answer --> 
+				<input id="system_active_question" value="1" type="hidden">
+				<!-- flag telling if game is win --> 
+				<input id="system_game_win" type="hidden">
+
+				<input id="system_game_mode" type="hidden">
 			</div>
+
+			<div style="display: none;" id="box-win"></div>
+			<div id="log"></div>
+
+		</div>
 		
-		</div>
+		<footer class="footer">
+		  <div class="container">
+			<p class="text-muted">Place sticky footer content here.</p>
+		  </div>
+		</footer>
 
-		<!-- Popup window for answering -->
-		<div id="box-popup"></div>
 
-		<!-- System data - these inputs are not used anymore, changed to variable -->
-		<div id="div-system">
-			<!-- current level played -->
-			<input id="system_level" type="hidden">
-			<!-- number of player of current game -->
-			<input id="system_number_player" type="hidden">
-			<!-- current question index in level question array -->
-			<input id="system_round" type="hidden">
-			<!-- current question answer -->
-			<input id="system_result" type="hidden">
-			<!-- flag telling if a question is currently active and open for answer --> 
-			<input id="system_active_question" value="1" type="hidden">
-			<!-- flag telling if game is win --> 
-			<input id="system_game_win" type="hidden">
-
-			<input id="system_game_mode" type="hidden">
-		</div>
-
-		<div style="display: none;" id="box-win"></div>
-		<div id="log"></div>
 		
 		<script type="text/javascript">
 		function saisie(val){
