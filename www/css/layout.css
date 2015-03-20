@@ -250,11 +250,15 @@ text-align:center;
 
 
 .fright {
-float:right;
+display:inline;
+text-align:center;
+padding:0px 10px 0px 10px;
 }
 
 .fleft {
-float:left;
+display:inline;
+text-align:center;
+padding:0px 10px 0px 10px;
 }
 
 .fclear {

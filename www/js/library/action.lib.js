@@ -217,7 +217,7 @@ function FooterMenu(Parameters)
          Buttons+='<div class="fleft">'+ButtonNextStep('step1', MessageDictionnary('Revenir'))+'</div>';
          if(Players.length>0)
          {
-            Buttons+=ButtonNextStep('step3', MessageDictionnary('Continuer'));
+            Buttons+='<div class="fleft">'+ButtonNextStep('step3', MessageDictionnary('Continuer'))+'</div>';
          }
          $('#footer').html(Buttons);
       break;
@@ -1112,6 +1112,7 @@ function LevelQuestionToForm(CurrentLevel)
    var Html=FontColorQuestionMapping();//<a href="javascript:'+"ToogleElement('question-"+CurrentLevel.GetName()+"');"+'">'+CurrentLevel.GetName()+'</a><br/><div id="question-'+CurrentLevel.GetName()+'" style="display:none;">';//todo: replace space and illegal char
    
    //loop question and add a checkbox
+   Html += '<table>';
    for(var a = 0; a<CurrentLevel.ArrayOperation.length;a++)
    {
       if(CurrentLevel.ArrayOperation[a].search('#')==-1)
@@ -1153,18 +1154,19 @@ function LevelQuestionToForm(CurrentLevel)
 		ClassName = 'X';
 	}
 		
-         Html +=  '<div style="width:750px; float:left; background-color:'+RowColor+'; color:'+FontColor+';">'+StringQuestionNumber(Counter)+MessageDictionnary(CurrentLevel.ArrayOperation[a])+'</div><div class="fleft"><input type="checkbox" id="question_'+a+'" value="'+CurrentLevel.ArrayOperation[a]+'" class="question question-'+ClassName+'"/></div><div class="fclear"></div>'; 
+         //Html +=  '<div style="width:750px; float:left; background-color:'+RowColor+'; color:'+FontColor+';">'+StringQuestionNumber(Counter)+MessageDictionnary(CurrentLevel.ArrayOperation[a])+'</div><div class="fleft"><input type="checkbox" id="question_'+a+'" value="'+CurrentLevel.ArrayOperation[a]+'" class="question question-'+ClassName+'"/></div><div class="fclear"></div>'; 
+         Html +=  '<tr><td style="background-color:'+RowColor+'; color:'+FontColor+';">'+StringQuestionNumber(Counter)+MessageDictionnary(CurrentLevel.ArrayOperation[a])+'</td><td><input type="checkbox" id="question_'+a+'" value="'+CurrentLevel.ArrayOperation[a]+'" class="question question-'+ClassName+'"/></td></tr>'; 
 //use 2 css classes, question & question-class for jquery selection
 	Counter++;
 //class="question-'+CurrentLevel.GetName()+'"
       }else
       {
-         Html +='<div class="title2">'+MessageDictionnary(CurrentLevel.ArrayOperation[a].replace('#',''))+'</div>';
+         Html +='<td colspan="2" style="padding-top:20px;"><b>'+MessageDictionnary(CurrentLevel.ArrayOperation[a].replace('#',''))+'</b></td>';
       }
        
       //alert(CurrentLevel.ArrayOperation[a]);
    }
-   //Html += '</div>'; 
+   Html += '</table>'; 
    return Html;
 }
 function SinglePlayerChooseQuestion()
