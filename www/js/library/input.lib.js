@@ -84,7 +84,7 @@ function PlayerNameForm()
 
 function DropdownPlayerId(Id)
 {
-   var Dropdown='<select id="player_id">';
+   var Dropdown='<select id="player_id" class="form-control">';
    Dropdown+='<option value="-1">'+MessageDictionnary('Joueur')+'</option>';
    for(var u=0; u<Players.length; u++)
    {

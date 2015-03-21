@@ -36,7 +36,7 @@ timer = $.timer(function()
       //var GameMode = $('#system_game_mode').val();
       if(SystemGameMode=='single')
       {
-         $('#box-win').html('<img src="img/cup.jpg" width="80px" /><br/>'+$('#box-player-name-0').html()+MessageDictionnary(' a un score de ')+$('#box-player-score-0').html());
+         $('#box-win').html('<img src="img/cup.png" width="80px" /><br/>'+$('#box-player-name-0').html()+MessageDictionnary(' a un score de ')+$('#box-player-score-0').html());
          $('#box-win').show();
          //$('#system_game_win').attr('value',1); //set game to win
          SystemGameWin = 1;

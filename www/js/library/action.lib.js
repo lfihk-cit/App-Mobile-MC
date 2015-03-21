@@ -203,12 +203,12 @@ function FooterMenu(Parameters)
       case 'multi_step1':
       case 'single_step1':
       case 'open_step1':
-         $('#footer').html('<div class="fright">'+ButtonNextStep('step2',  MessageDictionnary('Continuer'))+'</div><div class="fclear"></div>');
+         $('#footer').html('<div class="fleft">'+ButtonNextStep('step2',  MessageDictionnary('Continuer'))+'</div><div class="fclear"></div>');
       break;
    
       //case 'multi_replay':
       case 'single_replay':
-         $('#footer').html('<div class="fright">'+ButtonNextStep('next_question', LabelMode)+'</div><div class="fclear"></div>');
+         $('#footer').html('<div class="fleft">'+ButtonNextStep('next_question', LabelMode)+'</div><div class="fclear"></div>');
       break;
 
       case 'multi_step2':
@@ -224,11 +224,11 @@ function FooterMenu(Parameters)
 
       case 'multi_replay':
       case 'multi_play':   
-         $('#footer').html('<div class="fright">'+ButtonNextStep('form_change_player_data', 'Change score')+ButtonNextStep('next_question', LabelMode)+'</div><div class="fclear"></div>');
+         $('#footer').html('<div class="fleft">'+ButtonNextStep('form_change_player_data', 'Change score')+'</div><div class="fleft">'+ButtonNextStep('next_question', LabelMode)+'</div><div class="fclear"></div>');
       break;
 
       case 'single_play': 
-        $('#footer').html('<div class="fright">'+ButtonNextStep('next_question', LabelMode)+'</div><div class="fclear"></div>');
+        $('#footer').html('<div class="fleft">'+ButtonNextStep('next_question', LabelMode)+'</div><div class="fclear"></div>');
       break;
       case 'single_empty': 
       case 'multi_empty': 
@@ -949,7 +949,7 @@ function IsGameWin(PlayerId)
       if(Win==true)
       {
          
-         $('#box-win').html('<img src="img/cup.jpg" width="80px" /><br/>'+$('#box-player-name-'+PlayerId).html() + MessageDictionnary(' a gagne!!'));
+         $('#box-win').html('<img src="img/cup.png" width="80px" /><br/>'+$('#box-player-name-'+PlayerId).html() + MessageDictionnary(' a gagne!!'));
          $('#box-win').show();
          //$('#system_game_win').attr('value',1); //set game to win
          SystemGameWin = 1;
@@ -1097,7 +1097,7 @@ function FontColorQuestionMapping()
 		Html += '<div style="text-align:center;padding:10px 0px 10px 0px;">';
 		for(var c in FontColor)
 		{
-			Html += '<a href="javascript:SelectQuestionByClass('+"'"+c+"'"+');" class="btn btn-default" style="margin:0px 4px 0px 4px;text-align:center;color:white;width:60px;background-color:'+FontColor[c]+';border-color:'+FontColor[c]+';"><b>'+c+'</b></a>';
+			Html += '<a href="javascript:SelectQuestionByClass('+"'"+c+"'"+');" class="btn btn-default" style="margin:0px 2px 0px 2px;text-align:center;color:white;width:55px;background-color:'+FontColor[c]+';border-color:'+FontColor[c]+';"><b>'+c+'</b></a>';
 		}
 		Html += '</div>';
 		
