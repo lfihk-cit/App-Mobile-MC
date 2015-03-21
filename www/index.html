@@ -6,8 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
-
 
 		<title>Calcul Mental - French International School Hong Kong</title>
 
@@ -17,11 +15,9 @@
 		<script type="text/javascript" src="js/library/object.js"></script>
 		<script type="text/javascript" src="js/config/user-settings.js"></script>
 		<script type="text/javascript" src="js/config/system-settings.js"></script>
-		<script type="text/javascript" src="js/jquery/jquery-1.js"></script>
-		<script type="text/javascript" src="js/jquery/jquery.js"></script>
-		
-	
-		
+		<script type="text/javascript" src="js/jquery/jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery-timer.js"></script>
+				
 		<!-- Bootstrap -->
 		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		
@@ -37,54 +33,36 @@
 		<![endif]-->
 
 		<script type="text/javascript">
-		$(document).ready(function()
-		{
-			var IsLoadMaths; var IsLoadInput; var IsLoadLayout; var IsLoadTimer; var IsLoadDictionnary; var IsLoadAction;
-			IsLoadMaths = IsLoadInput = IsLoadLayout = IsLoadTimer =  IsLoadDictionnary = IsLoadAction = false;
+			$(document).ready(function()
+			{
+				var IsLoadMaths; var IsLoadInput; var IsLoadLayout; var IsLoadTimer; var IsLoadDictionnary; var IsLoadAction;
+				IsLoadMaths = IsLoadInput = IsLoadLayout = IsLoadTimer =  IsLoadDictionnary = IsLoadAction = false;
 
-			function StartGameOnceLoad()
-			{
-				if(IsLoadMaths && IsLoadInput && IsLoadLayout && IsLoadTimer &&  IsLoadDictionnary && IsLoadAction)
-			{
-				Run({'mode':'step1'});
-			}else
-			{
-				$('#box-message').html('loading');
-			}
-			}
-			//loading library that are using jquery        	
-			$.getScript('js/library/maths.lib.js?' + new Date().getTime(), function() { IsLoadMaths=true; StartGameOnceLoad();  });
-			$.getScript('js/library/input.lib.js?' + new Date().getTime(), function() { IsLoadInput=true; StartGameOnceLoad();  });
-			$.getScript('js/library/layout.lib.js?' + new Date().getTime(), function() { IsLoadLayout=true; StartGameOnceLoad();  });
-			$.getScript('js/config/timer-settings.js?' + new Date().getTime(), function() { IsLoadTimer=true;StartGameOnceLoad();  });
-			$.getScript('js/translation/dictionnary.fr.js?' + new Date().getTime(), function() { IsLoadDictionnary=true; StartGameOnceLoad();  });
-			$.getScript('js/library/action.lib.js?' + new Date().getTime(), function() {IsLoadAction=true; StartGameOnceLoad();  });
-		});
-		/*
-		@ todo   check french characteer    ok
-		add key                    ok
-		first letter capital       ok (done for name, to be done in step 2)
-		close answer window button ok
-		name player too long?      ok
-		check 2 player same name   ok
-		multiplayer: reset score after game?      yes  
-		improve design and + window answer
-		add comment to object lib and input lib
-		add button instead of drop down for level
-		success game               approx
-		option editer score pour mode multi partie
-		bouton nouvelle partie tout le temps
-		selection du joeur seul par defaut dans fenetre reponse  ok
-		reply for division worng
-		*/
+				function StartGameOnceLoad()
+				{
+					if(IsLoadMaths && IsLoadInput && IsLoadLayout && IsLoadTimer &&  IsLoadDictionnary && IsLoadAction)
+				{
+					Run({'mode':'step1'});
+				}else
+				{
+					$('#box-message').html('loading');
+				}
+				}
+				//loading library that are using jquery        	
+				$.getScript('js/library/maths.lib.js?' + new Date().getTime(), function() { IsLoadMaths=true; StartGameOnceLoad();  });
+				$.getScript('js/library/input.lib.js?' + new Date().getTime(), function() { IsLoadInput=true; StartGameOnceLoad();  });
+				$.getScript('js/library/layout.lib.js?' + new Date().getTime(), function() { IsLoadLayout=true; StartGameOnceLoad();  });
+				$.getScript('js/config/timer-settings.js?' + new Date().getTime(), function() { IsLoadTimer=true;StartGameOnceLoad();  });
+				$.getScript('js/translation/dictionnary.fr.js?' + new Date().getTime(), function() { IsLoadDictionnary=true; StartGameOnceLoad();  });
+				$.getScript('js/library/action.lib.js?' + new Date().getTime(), function() {IsLoadAction=true; StartGameOnceLoad();  });
+			});
 		</script>
 
     </head>
 
     <body>		
 
-	
-		<!-- Fixed navbar -->
+	<!-- Fixed navbar -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container">
 			<div class="navbar-header">
@@ -104,33 +82,19 @@
 		  </div>
 		</nav>	
 		
-		
-		
-		
 		<div class="container">
 		
-		
 			<div id="menu"></div>
-			
-					<div id="box-message" class="error"></div>  
-					<div id="header" class="title1"></div>
+			<div id="box-message" class="error"></div>  
+			<div id="header" class="title1"></div>
+			<div class="row"><div id="body"></div></div>
 					
-					<div class="row">
-						<div id="body"></div>
-					</div>
-					
-
-
-
-				
-				<div style="display: none;" id="flag-langage">
-					<button onClick="LT_ChangeLangage('fr');" class="language-flag">
-						<img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg">
-					</button>
-				</div>
+			<div style="display: none;" id="flag-langage">
+				<button onClick="LT_ChangeLangage('fr');" class="language-flag">
+					<img src="img/fr.jpg"></button><button onClick="LT_ChangeLangage('en');" class="language-flag"><img src="img/us-en.jpg">
+				</button>
+			</div>
 			
-
-
 			<!-- Popup window for answering -->
 			<div id="box-popup"></div>
 
@@ -159,34 +123,28 @@
 		
 		<div id="footer"></div>
 
-
-		
 		<script type="text/javascript">
-		function saisie(val){
-		document.forms["virtual"]["text"].value += val;
-		$(document).one(Run({'mode':'answer'}));
-		
-		}
-		function back(){
-			value = document.forms["virtual"]["text"].value;
-			newvalue = value.substring(0, value.length - 1);
-			document.forms["virtual"]["text"].value = newvalue;
-		}
-		function reset(){
-		document.forms["virtual"]["text"].value = "";
-		}
+			function saisie(val){
+				document.forms["virtual"]["text"].value += val;
+				$(document).one(Run({'mode':'answer'}));
+			}
+			function back(){
+				value = document.forms["virtual"]["text"].value;
+				newvalue = value.substring(0, value.length - 1);
+				document.forms["virtual"]["text"].value = newvalue;
+			}
+			function reset(){
+				document.forms["virtual"]["text"].value = "";
+			}
 		</script>	
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="bootstrap/js/bootstrap.min.js"></script>		
-
 		
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>		
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <script type="text/javascript">app.initialize();</script>
     </body>
 </html>
