@@ -127,7 +127,7 @@ function SinglePlayerShowOperation(StringOperation)
    StringOperation=StringOperation.replace("?",AnswerInput.toString());
    $("#box-string-operation").html(StringOperation);
    //$("#inline_input_player_answer").focus();
-   //$("#inline_input_player_answer");
+   $("#inline_input_player_answer");
    
 }
 
