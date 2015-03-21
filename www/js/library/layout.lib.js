@@ -122,7 +122,7 @@ function SinglePlayerShowOperation(StringOperation)
 {
     //set string of operation and show it
    
-   AnswerInput = '<form name="virtual" style="display:inline"><input type="text" size="3" id="inline_input_player_answer" class="form-control" name="text" style="width:100px;display:inline;"autofocus /></form>';
+   AnswerInput = '<form name="virtual" style="display:inline"><input type="text" id="inline_input_player_answer" class="form-control" name="text" style="width:100px;display:inline;" /></form>';
   
    StringOperation=StringOperation.replace("?",AnswerInput.toString());
    $("#box-string-operation").html(StringOperation);

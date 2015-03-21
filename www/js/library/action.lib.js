@@ -419,22 +419,21 @@ function AllPlayerFormToHtml()
       Html+=Players[a].ToHtml();  
     }
    
-   Html += '<br /><div class="col-md-4 col-md-offset-4" style="clear:both">';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'7\')">7</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'8\')">8</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'9\')">9</a><br />';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'4\')">4</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'5\')">5</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'6\')">6</a><br />';   
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'1\')">1</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'2\')">2</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'3\')">3</a><br />';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'0\')">0</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="saisie(\'.\')">,</a><br />';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="reset()">C</a>';
-   Html += '<a class="btn btn-default" href="#" role="button" onclick="back()"><</a>';
+   Html += '<div style="clear:both;padding:10px 0px 0px 0px;">';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'7\')"><b>7</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'8\')"><b>8</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'9\')"><b>9</b></a><br />';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'4\')"><b>4</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'5\')"><b>5</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'6\')"><b>6</b></a><br />';   
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'1\')"><b>1</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'2\')"><b>2</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'3\')"><b>3</b></a><br />';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'0\')"><b>0</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'.\')"><b>,</b></a><br />';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="back()"><b><</b></a>';
+   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="reset()"><b>C</b></a>';
    Html += '</div>';   
-   
    Html+='<div class="fclear"></div>';
    return Html;
 }
@@ -1093,15 +1092,16 @@ function FontColorQuestion(Pattern_)
 
 function FontColorQuestionMapping()
 {
-    var Html = '';   
-    for(var c in FontColor)
-    {
-        Html += '<div style="width:50px; color:'+FontColor[c]+'" class="fright">';
-	Html += '<a href="javascript:SelectQuestionByClass('+"'"+c+"'"+');">'+c+'</a></div>';
-	Html += '<div style="width:25px; height:15px; background-color:'+FontColor[c]+';" class="fright">&nbsp;</div><div class="fclear"></div>';
-    }
-
-    return Html;
+		var Html = '';  
+		
+		Html += '<div style="text-align:center;padding:10px 0px 10px 0px;">';
+		for(var c in FontColor)
+		{
+			Html += '<a href="javascript:SelectQuestionByClass('+"'"+c+"'"+');" class="btn btn-default" style="margin:0px 4px 0px 4px;text-align:center;color:white;width:60px;background-color:'+FontColor[c]+';border-color:'+FontColor[c]+';"><b>'+c+'</b></a>';
+		}
+		Html += '</div>';
+		
+		return Html;
 
 }
 
@@ -1112,7 +1112,7 @@ function LevelQuestionToForm(CurrentLevel)
    var Html=FontColorQuestionMapping();//<a href="javascript:'+"ToogleElement('question-"+CurrentLevel.GetName()+"');"+'">'+CurrentLevel.GetName()+'</a><br/><div id="question-'+CurrentLevel.GetName()+'" style="display:none;">';//todo: replace space and illegal char
    
    //loop question and add a checkbox
-   Html += '<table>';
+   Html += '<table class="table table-striped">';
    for(var a = 0; a<CurrentLevel.ArrayOperation.length;a++)
    {
       if(CurrentLevel.ArrayOperation[a].search('#')==-1)
@@ -1155,13 +1155,13 @@ function LevelQuestionToForm(CurrentLevel)
 	}
 		
          //Html +=  '<div style="width:750px; float:left; background-color:'+RowColor+'; color:'+FontColor+';">'+StringQuestionNumber(Counter)+MessageDictionnary(CurrentLevel.ArrayOperation[a])+'</div><div class="fleft"><input type="checkbox" id="question_'+a+'" value="'+CurrentLevel.ArrayOperation[a]+'" class="question question-'+ClassName+'"/></div><div class="fclear"></div>'; 
-         Html +=  '<tr><td style="background-color:'+RowColor+'; color:'+FontColor+';">'+StringQuestionNumber(Counter)+MessageDictionnary(CurrentLevel.ArrayOperation[a])+'</td><td><input type="checkbox" id="question_'+a+'" value="'+CurrentLevel.ArrayOperation[a]+'" class="question question-'+ClassName+'"/></td></tr>'; 
-//use 2 css classes, question & question-class for jquery selection
-	Counter++;
-//class="question-'+CurrentLevel.GetName()+'"
+         Html +=  '<tr><td style="background-color:'+RowColor+'; color:'+FontColor+';">'+StringQuestionNumber(Counter)+MessageDictionnary(CurrentLevel.ArrayOperation[a])+'</td><td style="background-color:#F9F9F9;border-left:1px solid #DDDDDD;"><input type="checkbox" id="question_'+a+'" value="'+CurrentLevel.ArrayOperation[a]+'" class="question question-'+ClassName+'"/></td></tr>'; 
+		//use 2 css classes, question & question-class for jquery selection
+		Counter++;
+		//class="question-'+CurrentLevel.GetName()+'"
       }else
       {
-         Html +='<td colspan="2" style="padding-top:20px;"><b>'+MessageDictionnary(CurrentLevel.ArrayOperation[a].replace('#',''))+'</b></td>';
+         Html +='<td colspan="2" style="padding-top:20px;background-color:white;text-transform: uppercase;"><b>'+MessageDictionnary(CurrentLevel.ArrayOperation[a].replace('#',''))+'</b></td>';
       }
        
       //alert(CurrentLevel.ArrayOperation[a]);
