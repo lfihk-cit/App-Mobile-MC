@@ -141,7 +141,8 @@ function Run(Parameters)
          if(Answer(0)===true)
          {
             NextQuestion();
-            $('#inline_input_player_answer').focus();
+            //$('#inline_input_player_answer').focus();
+            $('#inline_input_player_answer');
          }else
          {
             //wait for correct answer
@@ -412,30 +413,30 @@ function GameParameterIsCorrect()
 
 function AllPlayerFormToHtml()
 {
-   var Html = '';
+	var Html = '';
     //create player form(s)
-   for(var a=0; a<Players.length;a++)
-   {
-      Html+=Players[a].ToHtml();  
-    }
-   
-   Html += '<div style="clear:both;padding:10px 0px 0px 0px;">';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'7\')"><b>7</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'8\')"><b>8</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'9\')"><b>9</b></a><br />';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'4\')"><b>4</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'5\')"><b>5</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'6\')"><b>6</b></a><br />';   
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'1\')"><b>1</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'2\')"><b>2</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'3\')"><b>3</b></a><br />';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'0\')"><b>0</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'.\')"><b>,</b></a><br />';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="back()"><b><</b></a>';
-   Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="reset()"><b>C</b></a>';
-   Html += '</div>';   
-   Html+='<div class="fclear"></div>';
-   return Html;
+	for(var a=0; a<Players.length;a++) {
+		Html+=Players[a].ToHtml();  
+	}
+	if (Players.length == 1) {
+		Html += '<div style="clear:both;padding:10px 0px 0px 0px;">';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'7\')"><b>7</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'8\')"><b>8</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'9\')"><b>9</b></a><br />';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'4\')"><b>4</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'5\')"><b>5</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'6\')"><b>6</b></a><br />';   
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'1\')"><b>1</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'2\')"><b>2</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'3\')"><b>3</b></a><br />';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'0\')"><b>0</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'.\')"><b>,</b></a><br />';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="back()"><b><</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="reset()"><b>C</b></a>';
+		Html += '</div>';   
+		Html += '<div class="fclear"></div>';
+	}
+	return Html;
 }
 /*
   * Start game, phase 3:

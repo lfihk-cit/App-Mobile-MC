@@ -98,7 +98,7 @@ padding:4px;
 
 .box-player-name {
 text-align:center;
-padding:0px 0px 0px 10px;
+padding:0px 0px 0px 0px;
 }
 
 .box-close {
@@ -119,7 +119,7 @@ background-color:#ECF0F1;
 
 .box-player a {
 display:block;
-padding:25px 5px 25px 5px;
+padding:40px 5px 40px 5px;
 text-decoration:none;
 text-align:center;
 text-transform: uppercase;

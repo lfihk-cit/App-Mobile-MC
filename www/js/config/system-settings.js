@@ -26,7 +26,7 @@
 //player(s) //////////////////////////////////////////////////////////
 Players = Array();
 MaxNumberPlayer = 6;
-MaxNameCharLen = 15; //avoid layout to be brocken if name too long
+MaxNameCharLen = 15; //avoid layout to be broken if name too long
 
 //debugging
 IsDebugMode=false;
@@ -46,8 +46,8 @@ SystemGameWin='';            //flag telling if game is win
 SystemQuestion=new Array();  //question of current round
 SystemCurrentQuestion='';    //name of current active question, if length>0, then there is a question going on
 
-SystemTimerBoxWidth = 400;   //width in pixel of the play box - to be changed along with the html layout 
-SystemTimerContainerWidth = 800;  
+SystemTimerBoxWidth = 300;   //width in pixel of the play box - to be changed along with the html layout 
+SystemTimerContainerWidth = 600;  
 
 //color for question/level
 FontColor={'CP':'#EA3247', 'CE1':'#FF9900', 'CE2':'#00CC00', 'CM1':'#3399FF', 'CM2':'#780000'};
