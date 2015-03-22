@@ -950,11 +950,11 @@ function IsGameWin(PlayerId)
       if(Win==true)
       {
          
-         $('#box-win').html('<img src="img/cup.png" width="80px" /><br/>'+$('#box-player-name-'+PlayerId).html() + MessageDictionnary(' a gagne!!'));
+         $('#box-win').html('<img src="img/cup.png" width="120px" /><br/><br /><br />'+$('#box-player-name-'+PlayerId).html() + MessageDictionnary(' a gagne!!'));
          $('#box-win').show();
          //$('#system_game_win').attr('value',1); //set game to win
          SystemGameWin = 1;
-         $('#footer').html('<div style="float:left">'+ButtonNextStep('step1', MessageDictionnary('Nouveau jeu'))+'</div><div style="float:right">'+ButtonNextStep('replay', MessageDictionnary('Rejouer ce match'))+'</div><div style="clear:both"></div>');
+         $('#footer').html('<div class="fleft">'+ButtonNextStep('step1', MessageDictionnary('Nouveau jeu'))+'</div><div class="fleft">'+ButtonNextStep('replay', MessageDictionnary('Rejouer ce match'))+'</div><div style="clear:both"></div>');
       }
    }
    
