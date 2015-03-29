@@ -24,7 +24,7 @@ function InputToHtml(Type, Id, Value, Size, Info)
    {
       Tips=' title="'+Info+'" ';   //remove ' and "
    }
-   return '<input type="'+Type+'" id="'+Id+'" class="form-control input-sm" style="margin:2px 0px 2px 0px;" value="'+Value+'" size="'+Size+'" '+Tips+' autofocus />';
+   return '<input type="'+Type+'" id="'+Id+'" class="form-control input-sm" style="margin:2px 0px 2px 0px;" value="'+Value+'" size="'+Size+'" '+Tips+' />';
 }
 /*
   * return an html input

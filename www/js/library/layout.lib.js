@@ -193,7 +193,8 @@ function MultiPlayerInitPopupAnswer(Id)
    //load dropdown of player
    $('#box-player-name').html(DropdownPlayerId(Id));
    //focus on answer input
-   $('#popup_input_player_answer').focus();
+   //$('#popup_input_player_answer').focus();
+   $('#popup_input_player_answer');
 }
 
 /*
