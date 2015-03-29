@@ -124,6 +124,12 @@
 		<div id="footer"></div>
 
 		<script type="text/javascript">
+			function saisie_box(val){
+				document.forms["virtual"]["text"].value += val;
+			}
+			function enter(){
+				jQuery.event.trigger({ type : 'keypress', which : 13 });
+			}
 			function saisie(val){
 				document.forms["virtual"]["text"].value += val;
 				setTimeout(verify,250);

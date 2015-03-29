@@ -164,11 +164,13 @@ color:#FF0000;
 
 #box-popup {
 display:none;
-width:300px;
 position:fixed;
-top:80px;
-left:50%;
-margin-left:-150px;
+left:1%;
+right:1%;
+
+
+top:60px;
+
 text-align:center;
 background-color:#D14D34;
 font-weight:bold;

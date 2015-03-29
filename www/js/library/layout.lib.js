@@ -194,7 +194,6 @@ function MultiPlayerInitPopupAnswer(Id)
    $('#box-player-name').html(DropdownPlayerId(Id));
    //focus on answer input
    $('#popup_input_player_answer').focus();
-   $('#popup_input_player_answer').focus();
 }
 
 /*
@@ -242,26 +241,40 @@ function LevelQuestionToForm()
 
 }
 */
-function AddHtmlToPopupBox(Type)
-{
-   $('#box-popup').empty();//empty box
-   if(Type=='answer')
-   {
+function AddHtmlToPopupBox(Type) {
+	$('#box-popup').empty();//empty box
+	if(Type=='answer')
+	{
 
-    $('#box-popup').html('<div class="box-close"><a style="color:#FFFFFF; text-decoration:none;" href="javascript:ClosePopupAnswerForm();">X</a></div> <div id="box-player-name"></div> <div id="box-form"><br/><input type="text" class="form-control" id="popup_input_player_answer" size="3" /><br /><button class="btn btn-warning btn-sm" onclick="javascript:Run({\'mode\':\'answer\'});"><b>?</b></button></div>');
-    $('#box-popup').show();
+		//Content = '<div class="box-close"><a style="color:#FFFFFF; text-decoration:none;" href="javascript:ClosePopupAnswerForm();">X</a></div> <div id="box-player-name"></div> <div id="box-form"><br/><input type="text" class="form-control" id="popup_input_player_answer" size="3" /><br /><button class="btn btn-warning btn-sm" onclick="javascript:Run({\'mode\':\'answer\'});"><b>?</b></button></div>';
+		Content = '<div id="box-player-name"></div> <div id="box-form"><br/><form name="virtual" style="vertical-align: text-bottom;display:inline"><input type="text" class="form-control" id="popup_input_player_answer" size="3" name="text" /></form><br /><button class="btn btn-warning btn-lg" onclick="javascript:Run({\'mode\':\'answer\'});"><b>?</b></button></div>';
+		Content += '<div style="clear:both;padding:10px 0px 0px 0px;">';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'7\')"><b>7</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'8\')"><b>8</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'9\')"><b>9</b></a><br />';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'4\')"><b>4</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'5\')"><b>5</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'6\')"><b>6</b></a><br />';   
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'1\')"><b>1</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'2\')"><b>2</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'3\')"><b>3</b></a><br />';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'0\')"><b>0</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'.\')"><b>,</b></a><br />';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="back()"><b><</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="reset()"><b>C</b></a>';
+		Content += '</div><br /><br /><button class="btn btn-primary btn-lg" onclick="javascript:Run({\'mode\':\'answer\'});">valider</button>'; 
+		Content += '<div class="fclear"></div>';
+
+		$('#box-popup').html(Content);
+		$('#box-popup').show();
       
-   }else if(Type=='player_data')
-   {
-      if(SystemCurrentQuestion.length==0)
-      {
-         DisableKeys();
-         $('#box-popup').html(FormChangePlayerData());
-         $('#box-popup').show();
-      }
-   }
-   
-
+	} else if(Type=='player_data') {
+		if(SystemCurrentQuestion.length==0) {
+			DisableKeys();
+			$('#box-popup').html(FormChangePlayerData());
+			$('#box-popup').show();
+		}
+	}
 }
 
 
