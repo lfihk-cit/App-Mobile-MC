@@ -289,21 +289,24 @@ function Replay()
   */
 function Step1()
 {
-   
-   //DisableKeys();
-   $('#box-win').hide();   //hide box win if shown (previous win)
-   //build player name form
-   var Html=PlayerNameForm();
-   //build level dropdown
-   //Html += DropdownLevelName();
-   //Html+='<input type="hidden" id="level_name" value="CE2" />';//disable since we do not choose level now
-   //output html
-   $('#header').html( MessageDictionnary('Choisir le type de jeu :'));
-   $('#body').html(Html); 
-   //
-   FooterMenu({'mode':'step1'});
-   $('#player_name_0').focus();
-   $('#flag-langage').html(IT_ButtonChangeLangage());
+	//DisableKeys();
+	$('#box-win').hide();   //hide box win if shown (previous win)
+	//build player name form
+	var Html=PlayerNameForm();
+	//build level dropdown
+	//Html += DropdownLevelName();
+	//Html+='<input type="hidden" id="level_name" value="CE2" />';//disable since we do not choose level now
+	//output html
+
+	header_content = '<div style="text-align:center;margin:-20px 0px 20px 0px;"><img src="img/logo_aefe+lfi.png" width="350" /></div>';
+	header_content += MessageDictionnary('Choisir le type de jeu');
+
+	$('#header').html(header_content);
+	$('#body').html(Html); 
+	//
+	FooterMenu({'mode':'step1'});
+	$('#player_name_0').focus();
+	$('#flag-langage').html(IT_ButtonChangeLangage());
 }
 
 
