@@ -298,7 +298,7 @@ function Step1()
 	//Html+='<input type="hidden" id="level_name" value="CE2" />';//disable since we do not choose level now
 	//output html
 
-	header_content = '<div style="text-align:center;margin:-20px 0px 20px 0px;"><img src="img/logo_aefe+lfi.png" width="350" /></div>';
+	header_content = '<div style="text-align:center;margin:-20px 0px 20px 0px;"><img src="img/logo_aefe+lfi.png" width="95%" /></div>';
 	header_content += MessageDictionnary('Choisir le type de jeu');
 
 	$('#header').html(header_content);
