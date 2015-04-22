@@ -299,7 +299,8 @@ function Step1()
 	//output html
 
 	header_content = '<div style="text-align:center;margin:-20px 0px 20px 0px;"><img src="img/logo_aefe+lfi.png" width="95%" /></div>';
-	header_content += MessageDictionnary('Choisir le type de jeu');
+	//header_content += MessageDictionnary('Choisir le type de jeu');
+	header_content += MessageDictionnary('');
 
 	$('#header').html(header_content);
 	$('#body').html(Html); 

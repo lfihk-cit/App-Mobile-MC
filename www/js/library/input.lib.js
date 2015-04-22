@@ -69,7 +69,7 @@ function ButtonToHtml(OnclickValue, Label)
 
 function PlayerNameForm()
 {
-   var Html='<div class="title2">'+MessageDictionnary('Nom des joueurs ?')+'</div>';
+   var Html='<div class="title2">'+MessageDictionnary('Nom des joueurs')+'</div>';
    //build fields for player name
    for(var a=0; a < MaxNumberPlayer; a++)
    {

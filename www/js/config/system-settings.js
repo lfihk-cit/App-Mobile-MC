@@ -25,7 +25,7 @@
 
 //player(s) //////////////////////////////////////////////////////////
 Players = Array();
-MaxNumberPlayer = 6;
+MaxNumberPlayer = 4;
 MaxNameCharLen = 15; //avoid layout to be broken if name too long
 
 //debugging
