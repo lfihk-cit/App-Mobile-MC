@@ -260,9 +260,10 @@ function AddHtmlToPopupBox(Type) {
 		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'2\')"><b>2</b></a>';
 		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'3\')"><b>3</b></a><br />';
 		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'0\')"><b>0</b></a>';
-		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'.\')"><b>,</b></a><br />';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie_box(\'.\')"><b>,</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\' \')"><b>&#9251; </b></a><br />';
 		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="back()"><b><</b></a>';
-		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="reset()"><b>C</b></a>';
+		Content += '<a class="btn btn-default" style="margin:1%;height:35px;width:48%" href="#" role="button" onclick="reset()"><b>C</b></a>';
 		Content += '</div><br /><br /><button class="btn btn-primary btn-lg" onclick="javascript:Run({\'mode\':\'answer\'});">valider</button>'; 
 		Content += '<div class="fclear"></div>';
 

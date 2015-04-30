@@ -434,9 +434,10 @@ function AllPlayerFormToHtml()
 		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'2\')"><b>2</b></a>';
 		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'3\')"><b>3</b></a><br />';
 		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'0\')"><b>0</b></a>';
-		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'.\')"><b>,</b></a><br />';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\'.\')"><b>,</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:31%" href="#" role="button" onclick="saisie(\' \')"><b>&#9251; </b></a><br />';
 		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="back()"><b><</b></a>';
-		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:47%" href="#" role="button" onclick="reset()"><b>C</b></a>';
+		Html += '<a class="btn btn-default" style="margin:1%;height:35px;width:48%" href="#" role="button" onclick="reset()"><b>C</b></a>';
 		Html += '</div>';   
 		Html += '<div class="fclear"></div>';
 	}
