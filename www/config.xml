@@ -4,12 +4,12 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "hk.edu.lfis.mccmt"
-        version   = "0.7">
+        version   = "0.8">
 
     <name>MCCMT</name>
 
     <description>
-        Ma Calculette, c'est ma tete
+        Ma Calculette, C'est Ma Tête
     </description>
 
     <author href="http://www.lfihk.net/cit/" email="labbal@lfis.edu.hk">
@@ -40,7 +40,7 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     
 	<!-- Define a specific version of PhoneGap to build into your app. -->
-    <preference name="phonegap-version"       value="cli-5.2.0" />
+    <!-- <preference name="phonegap-version"       value="cli-5.2.0" /> -->
     
 
     <!-- Plugins -->
